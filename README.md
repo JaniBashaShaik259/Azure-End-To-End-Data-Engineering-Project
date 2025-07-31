@@ -8,45 +8,25 @@ This project demonstrates development of an end to end data pipeline solution, f
 
 The Microsoft Azure Resources utilized for this project are:
 1. **Azure Data Factory (ADF)**: For data ingestion from source to destination.
-2. **Azure Databricks**: For data transformations using spark.
+2. **Azure Databricks**: For data transformations using PySpark and Spark-SQL.
 3. **Azure Data Lake Storage Gen2 (ADLS)**: For storing all the data.
 4. **Unity Catalog**: For data governance, access control, and schema management.
 5. **Azure Synapse Analytics**: For reporting and querying
-6. **Power BI**: For creating dashboards 
+6. **Power BI**: For creating dashboards (Established connection between Synapse and Power BI)
 
 
-The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
 ![Data Architecture](docs/data_architecture)
+The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
 
-1. **Bronze Layer**: Stores raw data as parquet format from the source systems. Data is ingested from Git Repository to Azure Datalake Storage Gen 2 using Azure Data Factory Dynamic Pipelines.
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis using Azure Databricks.
-3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
+1. **Bronze Layer**: Stored raw data as parquet format from the source systems. Data is ingested from Git Repository to Azure Datalake Storage Gen 2 using Azure Data Factory Dynamic Pipelines.
+2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis using Azure Databricks PySpark and Spark-SQL. Stored tranformed data in Delta format under the silver schema.
+3. **Gold Layer**: Created final fact and dimension tables (e.g., sales, customer, product). Saved final data under the gold schema. Houses business-ready data modeled into a star schema required for BI and Data Science teams.
 
----
-## 📖 Project Overview
-
-This project involves:
-
-1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
-2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
-3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
 
 ---
 
----
-
-## 🚀 Project Requirements
-### Building the Data Warehouse using End to End Pipeline (Data Engineering)
-### Objective
-
-Develop a modern data warehouse using Azure resources to consolidate sales data, enabling analytical reporting and informed decision-making.
-
-### Specifications
-- **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
-- **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only; historization of data is not required.
-- **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+This project helped business leaders track how their prices and prodcuts are performing across regions.
+Made it easy for data anylysts and scientists to use clean data for creating dashboards and ML models.
 
 
 ---
