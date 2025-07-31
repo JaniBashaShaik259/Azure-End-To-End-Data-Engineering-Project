@@ -1,7 +1,7 @@
-# Data Warehouse Project
-Welcome to the Data Warehouse Project repository! 🚀
+# Azure End To End Data Engineering Project
+Welcome to the Azure End To End Data Engineering Project! 🚀
 
-This project demonstrates a comprehensive data warehousing solution, from building a data warehouse from scratch to generating business ready data model.
+This project demonstrates a comprehensive data pipeline solution, from building a data warehouse from scratch to generating business ready data model using azure tools like ADF, ADLS, Databricks, Synapse.
 
 ---
 ## 🏗️ Data Architecture
